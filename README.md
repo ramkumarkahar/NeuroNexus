@@ -1,2 +1,2 @@
 # NeuroNexus
-Task 1 : unser infromation form
+Task 1 : user information form
