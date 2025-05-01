@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Styled Google Form Clone</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#141e30, #243b55);
+      font-family: Arial, sans-serif;
+    }
+
+    .login-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      padding: 40px;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,.5);
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px rgba(0,0,0,.6);
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    .login-box h2 {
+      margin: 0 0 30px;
+      padding: 0;
+      color: #fff;
+      text-align: center;
+    }
+
+    .user-box {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .user-box input,
+    .user-box textarea {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      resize: none;
+    }
+
+    .user-box select {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      background-color:  rgba(0,0,0,.5);    
+      border: none;
+      border-bottom: 1px solid #fff;
+      border-radius: 4px;
+      outline: none;
+      appearance: none;
+    }
+
+    .user-box label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: .5s;
+    }
+
+    .user-box input:focus ~ label,
+    .user-box input:valid ~ label,
+    .user-box textarea:focus ~ label,
+    .user-box textarea:valid ~ label,
+    .user-box select:focus ~ label,
+    .user-box select:valid ~ label {
+      top: -20px;
+      left: 0;
+      color: #03e9f4;
+      font-size: 12px;
+    }
+
+    .radio-group {
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .radio-group label {
+      margin-right: 15px;
+      font-size: 14px;
+    }
+
+    .radio-group input {
+      margin-right: 5px;
+    }
+
+    button[type="submit"] {
+      display: inline-block;
+      width: 100%;
+      padding: 10px 20px;
+      background: transparent;
+      color: #03e9f4;
+      border: 1px solid #03e9f4;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background: #03e9f4;
+      color: #000;
+    }
+
+    /* Autofill fix */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px transparent inset !important;
+      -webkit-text-fill-color: #fff !important;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="login-box" action="#" method="post">
+    <h2>User Information</h2>
+
+    <div class="user-box">
+      <input type="text" name="full-name" required>
+      <label>Full Name</label>
+    </div>
+
+    <div class="user-box">
+      <input type="tel" name="contact-number" required>
+      <label>Contact Number</label>
+    </div>
+
+    <div class="user-box">
+      <textarea name="address" required></textarea>
+      <label>Address</label>
+    </div>
+
+    <div class="user-box">
+      <input type="text" name="company-name" required>
+      <label>Company Name</label>
+    </div>
+
+    <div class="user-box">
+      <input type="email" name="email" required>
+      <label>Email Address</label>
+    </div>
+
+    <div class="user-box">
+      <select name="department" required>
+        <option value="" disabled selected hidden></option>
+        <option value="HR">HR</option>
+        <option value="Sales">Sales</option>
+        <option value="Development">Development</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Others">Others</option>
+      </select>
+      <label>Department</label>
+    </div>
+
+    <div class="radio-group">
+      <label><input type="radio" name="gender" value="Male" required> Male</label>
+      <label><input type="radio" name="gender" value="Female"> Female</label>
+      <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>
